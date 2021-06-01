@@ -88,4 +88,14 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //<<<<<<<<<<<<<<<<<<<<<<<COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void selecting_items_should_calculate_total_amount_of_items_selected(){
+        List<String> selected_items = new ArrayList<>();
+        selected_items.add(restaurant.getMenu().get(2).getName());
+        selected_items.add(restaurant.getMenu().get(3).getName());
+        int expected_amount = restaurant.getTotalCost(selected_items);
+        assertEquals(100,expected_amount);
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
